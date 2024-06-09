@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Orb | Simple graph</title>
+    <script src="orb.min.js"></script>
+    <script src="nodes.js"></script>
+    <script src="edges.js"></script>
+    <style>
+      #graph {
+        border: 1px solid #e0e0e0;
+        width: 600px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="graph"></div>
+    <script>
+      const container = document.getElementById("graph");
+
+      // First `Orb` is just a namespace of the JS package
+      const orb = new Orb.Orb(container);
+
+      // Initialize nodes and edges
+      orb.data.setup({ nodes, edges });
+
+      // Render and recenter the view
+      orb.view.render(() => {
+        orb.view.recenter();
+      });
+    </script>
+  </body>
+</html>
